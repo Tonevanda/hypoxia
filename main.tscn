@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2qbnu56uephs"]
+[gd_scene load_steps=8 format=3 uid="uid://b8815c0g72q22"]
 
 [ext_resource type="Texture2D" uid="uid://b333jwgd0lryo" path="res://assets/fox_run_1.png" id="1_t64lu"]
 [ext_resource type="Script" path="res://whale/movement.gd" id="1_uhg0x"]
