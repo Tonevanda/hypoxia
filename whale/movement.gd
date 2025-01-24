@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 600.0
+const SPEED = 6000.0
 var prev_direction = 1
 
 func _update_velocity(delta: float) -> void:
