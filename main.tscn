@@ -34,7 +34,7 @@ scale = Vector2(118.2, -148.412)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-0.778343, 4.15061)
-scale = Vector2(0.00738422, -0.0102677)
+scale = Vector2(0.00307519, -0.00228498)
 script = ExtResource("1_uhg0x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
@@ -48,6 +48,5 @@ scale = Vector2(0.017967, -1.83798)
 shape = SubResource("RectangleShape2D_voy48")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-0.575296, 4.15735)
+position = Vector2(-0.854484, 4.3797)
 scale = Vector2(-1.13974e+06, 2.17543e+06)
-zoom = Vector2(0.5, 0.5)
