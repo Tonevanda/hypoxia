@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2qbnu56uephs"]
+
+[ext_resource type="Texture2D" uid="uid://b333jwgd0lryo" path="res://assets/fox_run_1.png" id="1_t64lu"]
+[ext_resource type="Texture2D" uid="uid://d3y6h7xkgxywe" path="res://assets/fox_run_2.png" id="2_oyqfm"]
+[ext_resource type="Texture2D" uid="uid://dq6f3lrsbrmht" path="res://assets/fox_run_3.png" id="3_rpkt4"]
+[ext_resource type="Texture2D" uid="uid://ctd687c2vhoqk" path="res://assets/fox_run_4.png" id="4_xx8nb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iywin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t64lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oyqfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rpkt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xx8nb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_voy48"]
+size = Vector2(10993.3, 27.9094)
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(118.2, -148.412)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(-0.778343, 4.15061)
+scale = Vector2(0.0411355, -0.0512832)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_iywin")
+autoplay = "default"
+frame_progress = 0.690393
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(18.2175, -7.62524)
+scale = Vector2(0.017967, -1.83798)
+shape = SubResource("RectangleShape2D_voy48")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-0.642978, 0.101068)
+scale = Vector2(-1.13974e+06, 329642)
+zoom = Vector2(0.1, 0.1)
