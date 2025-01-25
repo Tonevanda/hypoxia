@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://bywpce3ojfcm6"]
 
+[ext_resource type="Script" path="res://whale/pufferfish.gd" id="1_8splh"]
 [ext_resource type="Texture2D" uid="uid://dfhshxpdcivnm" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_ionfj"]
-[ext_resource type="Script" path="res://whale/movement.gd" id="1_l2vt1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_harga"]
 atlas = ExtResource("1_ionfj")
@@ -130,12 +130,12 @@ size = Vector2(10, 14)
 z_index = 2
 position = Vector2(5, 0)
 scale = Vector2(0.623628, 0.734472)
-script = ExtResource("1_l2vt1")
+script = ExtResource("1_8splh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mpmfn")
 autoplay = "default"
-frame_progress = 0.361399
+frame_progress = 0.114007
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 4)
