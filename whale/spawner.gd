@@ -1,0 +1,22 @@
+extends Node2D
+
+@onready var pufferfish_scene = preload("res://scenes/pufferfish.tscn")
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+func spawn_pufferfish() -> void:
+	var pufferfish = pufferfish_scene.instantiate()
+	pufferfish.position = Vector2(2, 2)
+	get_parent().add_child(pufferfish)
+	
+
+func _on_timer_timeout() -> void:
+	print("hello")
+	spawn_pufferfish()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
