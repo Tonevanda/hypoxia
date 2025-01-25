@@ -9,7 +9,8 @@ const SPEED = 10.0
 func handleCollisions(delta: float):
 	print(collidingEntities)
 	for entity in collidingEntities:
-		pass
+		if entity.name.begins_with("Projectile"):
+			queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
