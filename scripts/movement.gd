@@ -17,8 +17,10 @@ func _flipH() -> void:
 		animated_sprite.flip_h = true
 
 func _update_velocity() -> void:
-	if is_attacking:  # Don't update velocity while attacking
-		return
+	if is_attacking:
+		velocity.x = 0
+		velocity.y = 0
+	
 	var h_direction := Input.get_axis("ui_left", "ui_right")
 	var v_direction := Input.get_axis("ui_up", "ui_down")
 	if h_direction:
@@ -64,9 +66,8 @@ func _physics_process(delta: float) -> void:
 		if attack_time >= 0.65:
 			# Attack animation is finished, reset
 			is_attacking = false
-			_animate()
-	else:
-		_flipH()
-		_update_velocity()
+			#_animate()
+	_flipH()
+	_update_velocity()
 	_animate()
 	move_and_slide()
