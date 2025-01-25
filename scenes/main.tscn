@@ -138,8 +138,24 @@ texture = ExtResource("22_id4ta")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_f1pw4")
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 scale = Vector2(118.2, -148.412)
+
+[node name="Whale" type="CharacterBody2D" parent="."]
+z_index = 1
+position = Vector2(-0.778343, 4.15061)
+scale = Vector2(0.05, -0.071)
+script = ExtResource("1_ayuj0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Whale"]
+sprite_frames = SubResource("SpriteFrames_iywin")
+animation = &"idle"
+autoplay = "run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Whale"]
+position = Vector2(16.1591, 8.96822)
+scale = Vector2(0.017967, -1.83798)
+shape = SubResource("RectangleShape2D_voy48")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-0.575296, 4.16409)
