@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ddh1cesv1kpyl"]
+[gd_scene load_steps=25 format=3 uid="uid://bhenoi4ci8ml2"]
 
 [ext_resource type="Script" path="res://scripts/oxygentracker.gd" id="1_4lh5p"]
 [ext_resource type="Script" path="res://scripts/movement.gd" id="2_uil6b"]

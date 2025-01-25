@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/button.gd" id="2_fllxn"]
 [ext_resource type="Script" path="res://scripts/quit.gd" id="3_cdtud"]
 
-[node name="Node2D" type="Node2D"]
+[node name="TitleScreen" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
