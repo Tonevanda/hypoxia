@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://ikh5logcun4l"]
+[gd_scene load_steps=22 format=3 uid="uid://bywpce3ojfcm6"]
 
 [ext_resource type="Texture2D" uid="uid://dfhshxpdcivnm" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_ionfj"]
 [ext_resource type="Script" path="res://scripts/towardsPlayerMovement.gd" id="1_w7mcu"]
-[ext_resource type="PackedScene" uid="uid://bvgsptgg612im" path="res://scenes/collision_with_player_only.tscn" id="3_hwy4j"]
+[ext_resource type="PackedScene" path="res://scenes/collision_with_player_only.tscn" id="3_hwy4j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_harga"]
 atlas = ExtResource("1_ionfj")

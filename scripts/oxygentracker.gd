@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 	OXYGEN_LEVEL = max(OXYGEN_LEVEL, 0)
 
 	#Print the current oxygen level (for debugging)
+	#print("OXYGEN_LEVEL: ", OXYGEN_LEVEL)
 
 	# Check if oxygen level reaches 0
 	if OXYGEN_LEVEL <= 0:

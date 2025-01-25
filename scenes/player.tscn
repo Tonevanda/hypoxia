@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://bwh5rk36estp0"]
+[gd_scene load_steps=30 format=3 uid="uid://bhenoi4ci8ml2"]
 
 [ext_resource type="Script" path="res://scripts/oxygentracker.gd" id="1_4lh5p"]
 [ext_resource type="Script" path="res://scripts/movement.gd" id="2_uil6b"]
+[ext_resource type="Texture2D" uid="uid://2ecsv71t7lvu" path="res://assets/attack_animation_no_lines_png.png" id="3_j4tn4"]
 [ext_resource type="Texture2D" uid="uid://cqv0qnjwl7cxs" path="res://assets/fox_idle_1.png" id="3_r8p43"]
 [ext_resource type="Texture2D" uid="uid://cb0wb0lehsxg7" path="res://assets/fox_idle_2.png" id="4_51eln"]
 [ext_resource type="Texture2D" uid="uid://yvm0fvd2sm32" path="res://assets/fox_idle_3.png" id="5_k3u8q"]
@@ -22,10 +23,36 @@
 [ext_resource type="Texture2D" uid="uid://d3y6h7xkgxywe" path="res://assets/fox_run_2.png" id="20_27xa1"]
 [ext_resource type="Texture2D" uid="uid://dq6f3lrsbrmht" path="res://assets/fox_run_3.png" id="21_vuhki"]
 [ext_resource type="Texture2D" uid="uid://ctd687c2vhoqk" path="res://assets/fox_run_4.png" id="22_o5p0y"]
-[ext_resource type="PackedScene" uid="uid://c4tkwt2y3i4of" path="res://scenes/collision.tscn" id="23_ax58f"]
+[ext_resource type="PackedScene" path="res://scenes/collision.tscn" id="24_oew4c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dkyp"]
+atlas = ExtResource("3_j4tn4")
+region = Rect2(0, 0, 1650, 1650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us7nq"]
+atlas = ExtResource("3_j4tn4")
+region = Rect2(1650, 0, 1650, 1650)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p07cw"]
+atlas = ExtResource("3_j4tn4")
+region = Rect2(3300, 0, 1650, 1650)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iywin"]
 animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_0dkyp")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_us7nq")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_p07cw")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_r8p43")
@@ -97,10 +124,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hkof"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_voy48"]
 size = Vector2(18109.9, 50.9623)
 
-[node name="Player" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_4lh5p")
 
 [node name="Whale" type="CharacterBody2D" parent="."]
@@ -111,13 +138,12 @@ script = ExtResource("2_uil6b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Whale"]
 sprite_frames = SubResource("SpriteFrames_iywin")
-animation = &"idle"
-autoplay = "run"
+animation = &"attack"
+autoplay = "attack"
 
-[node name="Collision" parent="Whale" instance=ExtResource("23_ax58f")]
-scale = Vector2(1, 1)
+[node name="Collision" parent="Whale" instance=ExtResource("24_oew4c")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Whale/Collision"]
 position = Vector2(16.1591, 8.96822)
 scale = Vector2(0.017967, -1.83798)
-shape = SubResource("RectangleShape2D_2hkof")
+shape = SubResource("RectangleShape2D_voy48")
