@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://bywpce3ojfcm6"]
+[gd_scene load_steps=22 format=3 uid="uid://ikh5logcun4l"]
 
 [ext_resource type="Texture2D" uid="uid://dfhshxpdcivnm" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_ionfj"]
-[ext_resource type="Script" path="res://whale/movement.gd" id="1_l2vt1"]
+[ext_resource type="Script" path="res://whale/towardsPlayerMovement.gd" id="1_w7mcu"]
+[ext_resource type="PackedScene" uid="uid://bvgsptgg612im" path="res://scenes/collision_with_player_only.tscn" id="3_hwy4j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_harga"]
 atlas = ExtResource("1_ionfj")
@@ -67,7 +68,7 @@ region = Rect2(192, 96, 32, 32)
 atlas = ExtResource("1_ionfj")
 region = Rect2(224, 96, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mpmfn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xybso"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -123,24 +124,19 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_03i7x"]
-size = Vector2(10, 14)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5u3j"]
+size = Vector2(556.576, 5.98483)
 
-[node name="Pufferfish" type="Area2D"]
-z_index = 2
-position = Vector2(5, 0)
-scale = Vector2(0.623628, 0.734472)
-script = ExtResource("1_l2vt1")
+[node name="Pufferfish" type="Node2D"]
+script = ExtResource("1_w7mcu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_mpmfn")
+sprite_frames = SubResource("SpriteFrames_xybso")
 autoplay = "default"
-frame_progress = 0.361399
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 4)
-shape = SubResource("RectangleShape2D_03i7x")
+[node name="Area2D" parent="." instance=ExtResource("3_hwy4j")]
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 3.5)
+scale = Vector2(0.017967, -1.83798)
+shape = SubResource("RectangleShape2D_c5u3j")

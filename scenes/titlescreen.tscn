@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://kuqkxecgc8ak"]
+[gd_scene load_steps=4 format=3 uid="uid://bvx76q0clb2ds"]
 
 [ext_resource type="Texture2D" uid="uid://01mdkbyy7y5t" path="res://assets/Hypoxia-main-menu.png" id="1_64qr6"]
 [ext_resource type="Script" path="res://whale/button.gd" id="2_fllxn"]

@@ -10,12 +10,13 @@ func _ready() -> void:
 func spawn_pufferfish() -> void:
 	var pufferfish = pufferfish_scene.instantiate()
 	pufferfish.rotation = PI
-	pufferfish.position = Vector2(2, 2)
+	pufferfish.position = Vector2(2, 15)
 	get_parent().add_child(pufferfish)
 	
 
 func _on_timer_timeout() -> void:
 	spawn_pufferfish()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

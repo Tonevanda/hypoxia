@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 6000.0
 var prev_direction = 1
+var isColliding = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -43,3 +44,5 @@ func _physics_process(delta: float) -> void:
 	_update_velocity()
 	move_and_slide()
 	_animate()
+	if isColliding:
+		print("hello")
