@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://kuqkxecgc8ak"]
+[gd_scene load_steps=5 format=3 uid="uid://kuqkxecgc8ak"]
 
 [ext_resource type="Texture2D" uid="uid://64aajxrx8omj" path="res://assets/main-menu.png" id="1_mcrnj"]
 [ext_resource type="Script" path="res://scripts/button.gd" id="2_fllxn"]
 [ext_resource type="Script" path="res://scripts/quit.gd" id="3_cdtud"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="4_dnugc"]
 
 [node name="TitleScreen" type="Node2D"]
 
@@ -40,7 +41,17 @@ scale = Vector2(38.7773, 9.94805)
 flat = true
 script = ExtResource("3_cdtud")
 
+[node name="Credits" type="Button" parent="Control/TextureRect"]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 647.0
+offset_right = 1139.0
+offset_bottom = 724.0
+flat = true
+script = ExtResource("4_dnugc")
+
 [connection signal="mouse_entered" from="Control/TextureRect/StartGame" to="Control/TextureRect/StartGame" method="_on_mouse_entered"]
 [connection signal="pressed" from="Control/TextureRect/StartGame" to="Control/TextureRect/StartGame" method="_on_pressed"]
 [connection signal="pressed" from="Control/TextureRect/Quit" to="Control/TextureRect/StartGame" method="_on_quit_pressed"]
 [connection signal="pressed" from="Control/TextureRect/Quit" to="Control/TextureRect/Quit" method="_on_pressed"]
+[connection signal="pressed" from="Control/TextureRect/Credits" to="Control/TextureRect/Credits" method="_on_pressed"]
