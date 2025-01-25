@@ -14,6 +14,6 @@ func _on_area_exited(area: Area2D) -> void:
 	if area_parent.name.begins_with("Pufferfish"):	
 		for entity in area_parent.collidingEntities:
 			if entity.name == get_parent().name:	
-				area_parent.remove(entity)
+				area_parent.collidingEntities.remove(entity)
 				break
 	
