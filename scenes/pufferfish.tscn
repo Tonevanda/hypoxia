@@ -126,12 +126,14 @@ animations = [{
 size = Vector2(10, 14)
 
 [node name="Pufferfish" type="Area2D"]
+z_index = 2
 position = Vector2(5, 0)
+scale = Vector2(0.623628, 0.734472)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mpmfn")
 autoplay = "default"
-frame_progress = 0.149462
+frame_progress = 0.784318
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 4)
