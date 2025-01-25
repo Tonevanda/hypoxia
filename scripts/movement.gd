@@ -59,6 +59,7 @@ func _start_attack() -> void:
 		projectile.set_direction(-1)
 	projectile.name = "Projectile" + str(projectileId)
 	get_parent().add_child(projectile)
+	projectileId += 1
 	
 
 func _input(event: InputEvent) -> void:
