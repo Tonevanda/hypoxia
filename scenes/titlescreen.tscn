@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvx76q0clb2ds"]
 
 [ext_resource type="Texture2D" uid="uid://01mdkbyy7y5t" path="res://assets/Hypoxia-main-menu.png" id="1_64qr6"]
-[ext_resource type="Script" path="res://whale/button.gd" id="2_fllxn"]
-[ext_resource type="Script" path="res://whale/quit.gd" id="3_cdtud"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="2_fllxn"]
+[ext_resource type="Script" path="res://scripts/quit.gd" id="3_cdtud"]
 
-[node name="Node2D" type="Node2D"]
+[node name="TitleScreen" type="Node2D"]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
