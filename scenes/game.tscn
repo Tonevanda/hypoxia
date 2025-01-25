@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://c2qbnu56uephs"]
+[gd_scene load_steps=6 format=4 uid="uid://c2qbnu56uephs"]
 
 [ext_resource type="PackedScene" uid="uid://bwh5rk36estp0" path="res://scenes/player.tscn" id="4_nb8ew"]
 [ext_resource type="Texture2D" uid="uid://cb5chlqboixxe" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="22_dkbfi"]
 [ext_resource type="PackedScene" uid="uid://drtmflbbsaavt" path="res://scenes/spawner.tscn" id="23_h0quh"]
-[ext_resource type="Script" path="res://whale/spawner.gd" id="25_ic3sa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1pw4"]
 texture = ExtResource("22_dkbfi")
@@ -152,6 +151,5 @@ tile_map_data = PackedByteArray("AAD+////AAAAAAAAADD/////AAAAAAAAADAAAP//AAAAAAA
 tile_set = SubResource("TileSet_ex1tj")
 
 [node name="Spawner" parent="." instance=ExtResource("23_h0quh")]
-script = ExtResource("25_ic3sa")
 
 [node name="Player" parent="." instance=ExtResource("4_nb8ew")]

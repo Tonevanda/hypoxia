@@ -114,16 +114,10 @@ sprite_frames = SubResource("SpriteFrames_iywin")
 animation = &"idle"
 autoplay = "run"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Whale"]
-position = Vector2(16.1591, 8.96822)
-scale = Vector2(0.017967, -1.83798)
-shape = SubResource("RectangleShape2D_2hkof")
+[node name="Collision" parent="Whale" instance=ExtResource("23_ax58f")]
+scale = Vector2(1, 1)
 
-[node name="Collision" parent="." instance=ExtResource("23_ax58f")]
-position = Vector2(-0.778343, 4.15061)
-scale = Vector2(0.05, -0.071)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Whale/Collision"]
 position = Vector2(16.1591, 8.96822)
 scale = Vector2(0.017967, -1.83798)
 shape = SubResource("RectangleShape2D_2hkof")

@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 6000.0
 var prev_direction = 1
+var isColliding = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 
