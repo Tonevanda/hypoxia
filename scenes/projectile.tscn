@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7fbinf6fsay2"]
+
+[ext_resource type="Script" path="res://scripts/straight.gd" id="1_fdsm4"]
+[ext_resource type="Texture2D" uid="uid://dv2s8wmolffx6" path="res://icon.svg" id="1_ib24y"]
+[ext_resource type="PackedScene" uid="uid://cbl3lkvlkm515" path="res://scenes/collision_with_mob.tscn" id="2_ptbc7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8rp2"]
+size = Vector2(116, 119)
+
+[node name="Projectile" type="Node2D"]
+scale = Vector2(0.0941447, 0.113677)
+script = ExtResource("1_fdsm4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ib24y")
+
+[node name="CollisionMob" parent="." instance=ExtResource("2_ptbc7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionMob"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_i8rp2")

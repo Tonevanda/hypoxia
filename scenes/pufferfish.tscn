@@ -1,8 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bywpce3ojfcm6"]
+[gd_scene load_steps=22 format=3 uid="uid://ikh5logcun4l"]
 
 [ext_resource type="Texture2D" uid="uid://dfhshxpdcivnm" path="res://brackeys_platformer_assets/sprites/knight.png" id="1_ionfj"]
 [ext_resource type="Script" path="res://scripts/towardsPlayerMovement.gd" id="1_w7mcu"]
-[ext_resource type="PackedScene" path="res://scenes/collision_with_player_only.tscn" id="3_hwy4j"]
+[ext_resource type="PackedScene" uid="uid://bvgsptgg612im" path="res://scenes/collision_with_non_mob.tscn" id="3_hwy4j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_harga"]
 atlas = ExtResource("1_ionfj")
@@ -134,9 +134,9 @@ script = ExtResource("1_w7mcu")
 sprite_frames = SubResource("SpriteFrames_xybso")
 autoplay = "default"
 
-[node name="Area2D2" parent="." instance=ExtResource("3_hwy4j")]
+[node name="Area2D" parent="." instance=ExtResource("3_hwy4j")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1, 3.5)
 scale = Vector2(0.017967, -1.83798)
 shape = SubResource("RectangleShape2D_c5u3j")

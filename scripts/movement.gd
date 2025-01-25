@@ -7,6 +7,7 @@ var is_attacking = false  # Tracks if the character is in the attack state
 var attack_time = 0.0  # Timer for attack animation duration
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var projectile_scene = preload("res://scenes/projectile.tscn")
 
 func _flipH() -> void:
 	var h_direction := Input.get_axis("ui_left", "ui_right")
@@ -47,6 +48,10 @@ func _start_attack() -> void:
 	is_attacking = true
 	attack_time = 0.0  # Reset the attack timer
 	animated_sprite.play("attack")
+	var projectile = projectile_scene.instantiate()
+	projectile.position = position
+	get_parent().add_child(projectile)
+	
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("attack"):
