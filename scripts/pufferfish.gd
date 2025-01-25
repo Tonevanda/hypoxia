@@ -1,7 +1,7 @@
 extends Area2D
 
 
-@onready var player = get_node("/root/Game/Whale")
+@onready var player = get_node("/root/Game/Player")
 var isColliding = false
 
 
@@ -15,9 +15,6 @@ func _process(delta: float) -> void:
 	else:
 		position.x = move_toward(position.x, player.position.x, SPEED*delta)
 		position.y = move_toward(position.y, player.position.y, SPEED*delta)
-
-
-
 
 func _on_body_entered(body: Node2D) -> void:
 	isColliding = true
