@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://kuqkxecgc8ak"]
+
+[ext_resource type="Texture2D" uid="uid://01mdkbyy7y5t" path="res://assets/Hypoxia-main-menu.png" id="1_0udba"]
+[ext_resource type="Script" path="res://whale/button.gd" id="2_e5t0j"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_top = 155.0
+offset_right = 1170.0
+offset_bottom = 624.0
+scale = Vector2(1.63861, 1.64256)
+texture = ExtResource("1_0udba")
+
+[node name="Button" type="Button" parent="Control/TextureRect"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 287.0
+offset_right = 421.0
+offset_bottom = 298.0
+scale = Vector2(15.5515, 7.14526)
+flat = true
+script = ExtResource("2_e5t0j")
+
+[connection signal="pressed" from="Control/TextureRect/Button" to="Control/TextureRect/Button" method="_on_pressed"]
