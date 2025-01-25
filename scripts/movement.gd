@@ -2,9 +2,10 @@ extends CharacterBody2D
 
 const SPEED = 6000.0
 var prev_direction = 1
-var isColliding = false
+var collidingEntities = []
 var is_attacking = false  # Tracks if the character is in the attack state
 var attack_time = 0.0  # Timer for attack animation duration
+var projectileId = 1
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var projectile_scene = preload("res://scenes/projectile.tscn")
@@ -52,7 +53,13 @@ func _start_attack() -> void:
 	animated_sprite.play("attack")
 	var projectile = projectile_scene.instantiate()
 	projectile.position = position
+	if animated_sprite.flip_h:	
+		projectile.set_direction(1)
+	else:
+		projectile.set_direction(-1)
+	projectile.name = "Projectile" + str(projectileId)
 	get_parent().add_child(projectile)
+	projectileId += 1
 	
 
 func _input(event: InputEvent) -> void:
@@ -71,3 +78,4 @@ func _physics_process(delta: float) -> void:
 	_update_velocity()
 	_animate()
 	move_and_slide()
+	collidingEntities = []
