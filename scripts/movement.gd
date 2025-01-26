@@ -67,6 +67,7 @@ func handleCollisions():
 	for entity in collidingEntities:
 		if entity.name.begins_with("Pufferfish"):
 			animation_state = "hurt"
+			entity.animation_state = "attack"
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("attack"):
