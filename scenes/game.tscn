@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://cdhchowj01rgr"]
+[gd_scene load_steps=9 format=4 uid="uid://c2qbnu56uephs"]
 
 [ext_resource type="Script" path="res://scripts/gameLogic.gd" id="1_3bf4u"]
-[ext_resource type="PackedScene" uid="uid://bhenoi4ci8ml2" path="res://scenes/player.tscn" id="4_nb8ew"]
+[ext_resource type="PackedScene" uid="uid://bwh5rk36estp0" path="res://scenes/player.tscn" id="4_nb8ew"]
 [ext_resource type="PackedScene" uid="uid://b3ck0ev6dki1r" path="res://scenes/level_1.tscn" id="5_lpg38"]
+[ext_resource type="PackedScene" uid="uid://bh5oqecimv2hl" path="res://scenes/ui.tscn" id="6_4h6x1"]
 [ext_resource type="Texture2D" uid="uid://cb5chlqboixxe" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="22_dkbfi"]
 [ext_resource type="PackedScene" uid="uid://drtmflbbsaavt" path="res://scenes/spawner.tscn" id="23_h0quh"]
 
@@ -144,12 +145,8 @@ sources/0 = SubResource("TileSetAtlasSource_f1pw4")
 scale = Vector2(118, 118)
 script = ExtResource("1_3bf4u")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-0.575296, 4.16409)
-scale = Vector2(-1.13974e+06, 2.17543e+06)
-zoom = Vector2(0.05, 0.05)
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
 tile_map_data = PackedByteArray("AAD+////AAAAAAAAADD/////AAAAAAAAADAAAP//AAAAAAAAADABAP//AAAAAAAAADACAP//AAAAAAAAADADAP//AAAAAAAAADD9////AAAAAAAAADD8////AAAAAAAAADA=")
 tile_set = SubResource("TileSet_ex1tj")
 
@@ -162,3 +159,20 @@ scale = Vector2(0.16973, 0.16973)
 
 [node name="Player" parent="." instance=ExtResource("4_nb8ew")]
 position = Vector2(-1.65519e-05, 0)
+
+[node name="UI" parent="." instance=ExtResource("6_4h6x1")]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = 122.135
+offset_right = 222.135
+offset_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-0.575296, 4.16409)
+rotation = 3.14159
+scale = Vector2(1.13974e+06, -2.17543e+06)
+zoom = Vector2(0.05, 0.05)
