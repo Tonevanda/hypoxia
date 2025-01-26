@@ -12,7 +12,6 @@ scale = Vector2(-10.6042, -5.29098)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.188604, 0.378002)
-rotation = 3.14159
 scale = Vector2(0.0309111, 0.0523241)
 texture = ExtResource("1_he2qt")
 
