@@ -35,3 +35,4 @@ attack={
 2d_physics/layer_2="enimigos"
 2d_physics/layer_3="Projectile"
 2d_physics/layer_4="Bubble"
+2d_physics/layer_5="Jellyfish"

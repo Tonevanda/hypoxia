@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://87rfg4uxwwd0"]
+
+[ext_resource type="Script" path="res://scripts/jellyfish.gd" id="1_ancqi"]
+[ext_resource type="Texture2D" uid="uid://c5tp80j6jswbn" path="res://assets/jellyfish_walk.png" id="2_mlwog"]
+[ext_resource type="PackedScene" uid="uid://c4tkwt2y3i4of" path="res://scenes/collision.tscn" id="3_jjbxt"]
+[ext_resource type="PackedScene" uid="uid://b7mkxpst1u877" path="res://scenes/random_movement.tscn" id="4_iqc1d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w4bu"]
+atlas = ExtResource("2_mlwog")
+region = Rect2(1650, 180, 1650, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n463r"]
+atlas = ExtResource("2_mlwog")
+region = Rect2(0, 180, 1650, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5n8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w4bu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n463r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 1.2
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qtnpu"]
+radius = 276.226
+
+[node name="Jellyfish" type="Node2D"]
+scale = Vector2(0.0153729, 0.0155093)
+script = ExtResource("1_ancqi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p5n8i")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.244936
+
+[node name="Collision" parent="." instance=ExtResource("3_jjbxt")]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+position = Vector2(226, 63)
+shape = SubResource("CircleShape2D_qtnpu")
+
+[node name="RandomMovement" parent="." instance=ExtResource("4_iqc1d")]

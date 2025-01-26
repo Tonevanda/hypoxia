@@ -3,6 +3,10 @@ extends Node2D
 
 var num_enemies = 10
 var current_level = 1
+const map_width = 320
+const map_height = 160
+const map_x = -160
+const map_y = -80
 @onready var spawner = get_node("Spawner")
 
 
