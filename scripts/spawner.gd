@@ -36,6 +36,7 @@ func spawnBubble():
 	var bubble = bubble_scene.instantiate()
 	bubble.position = Vector2(0, 0)
 	bubble.name = "Bubble" + str(id)
+	bubble.rotation = PI
 	get_parent().add_child(bubble)
 	id += 1
 

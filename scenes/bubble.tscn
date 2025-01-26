@@ -1,18 +1,24 @@
 [gd_scene load_steps=4 format=3 uid="uid://dm351vg6e0qkk"]
 
-[ext_resource type="Texture2D" uid="uid://64aajxrx8omj" path="res://assets/main-menu.png" id="1_8s3qq"]
+[ext_resource type="Texture2D" uid="uid://cjyph6hw3ql0e" path="res://assets/bubble.png" id="1_he2qt"]
 [ext_resource type="PackedScene" uid="uid://bvgsptgg612im" path="res://scenes/collision_with_non_mob.tscn" id="2_j2irm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4213o"]
-size = Vector2(58, 56)
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnvvx"]
+radius = 0.518024
 
 [node name="Bubble" type="Node2D"]
+rotation = 3.14159
+scale = Vector2(-10.6042, -5.29098)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.188604, 0.378002)
+rotation = 3.14159
 scale = Vector2(0.0309111, 0.0523241)
-texture = ExtResource("1_8s3qq")
+texture = ExtResource("1_he2qt")
 
 [node name="Area2D" parent="." instance=ExtResource("2_j2irm")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_4213o")
+position = Vector2(0.282907, 0.567003)
+scale = Vector2(1.46591, -2.97084)
+shape = SubResource("CircleShape2D_gnvvx")
