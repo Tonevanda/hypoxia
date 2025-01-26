@@ -12,7 +12,6 @@ var attack_time = 0.0
 
 func handleCollisions():
 	for entity in collidingEntities:
-		print(entity.name)
 		if entity.name.begins_with("Projectile"):
 			get_parent().num_enemies -= 1
 			if get_parent().num_enemies == 0:

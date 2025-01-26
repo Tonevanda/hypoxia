@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 	#print("OXYGEN_LEVEL: ", OXYGEN_LEVEL)
 
 	# Check if oxygen level reaches 0
-	print(OXYGEN_LEVEL)
 	if (OXYGEN_LEVEL > 60 and OXYGEN_LEVEL < 80):
 		get_parent().get_node("UI/Sprite2D").frame = 1
 	elif (OXYGEN_LEVEL > 40 and OXYGEN_LEVEL < 60):
