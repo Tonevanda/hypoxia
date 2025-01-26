@@ -7,7 +7,6 @@ var collidingEntities = []
 const SPEED = 10.0
 
 func handleCollisions(delta: float):
-	print(collidingEntities)
 	for entity in collidingEntities:
 		if entity.name.begins_with("Projectile"):
 			get_parent().num_enemies -= 1
@@ -18,7 +17,6 @@ func handleCollisions(delta: float):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if !collidingEntities.is_empty():
-		print("colliding")
 		handleCollisions(delta)
 	else:
 		position.x = move_toward(position.x, player.position.x, SPEED*delta)
