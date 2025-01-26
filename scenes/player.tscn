@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bhenoi4ci8ml2"]
+[gd_scene load_steps=21 format=3 uid="uid://bwh5rk36estp0"]
 
 [ext_resource type="Script" path="res://scripts/oxygentracker.gd" id="1_4lh5p"]
 [ext_resource type="Script" path="res://scripts/movement.gd" id="2_uil6b"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cx8o784sg7408" path="res://assets/ile_animation_whale_png.png" id="4_b5f8a"]
 [ext_resource type="Texture2D" uid="uid://bkhwtowyanpvp" path="res://assets/whale_hurt.png" id="4_kthrm"]
 [ext_resource type="Texture2D" uid="uid://ds6nwr11a4yn4" path="res://assets/wALK_CYCLE_whale_png.png" id="5_4q3bx"]
-[ext_resource type="PackedScene" path="res://scenes/collision.tscn" id="23_ax58f"]
+[ext_resource type="PackedScene" uid="uid://c4tkwt2y3i4of" path="res://scenes/collision.tscn" id="23_ax58f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u35mc"]
 atlas = ExtResource("3_tontw")

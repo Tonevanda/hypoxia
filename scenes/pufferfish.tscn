@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/pufferfish.gd" id="1_w7mcu"]
 [ext_resource type="Texture2D" uid="uid://dcu7bgs2pht3h" path="res://assets/puffer_fish_attack.png" id="2_4hvw2"]
 [ext_resource type="Texture2D" uid="uid://b3s3lsj8hbvp1" path="res://assets/pufferfish_walk.png" id="2_mo04e"]
-[ext_resource type="PackedScene" path="res://scenes/collision.tscn" id="3_hwy4j"]
-[ext_resource type="PackedScene" path="res://scenes/move_towards.tscn" id="6_ku1ac"]
+[ext_resource type="PackedScene" uid="uid://c4tkwt2y3i4of" path="res://scenes/collision.tscn" id="3_hwy4j"]
+[ext_resource type="PackedScene" uid="uid://drme7ng2xhame" path="res://scenes/move_towards.tscn" id="6_ku1ac"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3dn1"]
 atlas = ExtResource("2_mo04e")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://cdhchowj01rgr"]
+[gd_scene load_steps=9 format=4 uid="uid://c2qbnu56uephs"]
 
 [ext_resource type="Script" path="res://scripts/gameLogic.gd" id="1_3bf4u"]
-[ext_resource type="PackedScene" uid="uid://bhenoi4ci8ml2" path="res://scenes/player.tscn" id="4_nb8ew"]
+[ext_resource type="PackedScene" uid="uid://bwh5rk36estp0" path="res://scenes/player.tscn" id="4_nb8ew"]
 [ext_resource type="PackedScene" uid="uid://b3ck0ev6dki1r" path="res://scenes/level_1.tscn" id="5_lpg38"]
 [ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="6_4h6x1"]
 [ext_resource type="PackedScene" uid="uid://drtmflbbsaavt" path="res://scenes/spawner.tscn" id="23_h0quh"]
