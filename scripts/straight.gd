@@ -2,7 +2,7 @@ extends Node2D
 
 var collidingEntities = []
 var direction = 1
-const SPEED = 10.0
+@export var SPEED = 10.0
 
 
 func set_direction(casterDirection: int) -> void:
