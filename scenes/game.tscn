@@ -5,15 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://drtmflbbsaavt" path="res://scenes/spawner.tscn" id="23_h0quh"]
 
 [node name="Game" type="Node2D"]
-scale = Vector2(118.2, -148.412)
+scale = Vector2(-118.2, 148.412)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-0.575296, 4.16409)
-scale = Vector2(-1.13974e+06, 2.17543e+06)
 zoom = Vector2(0.05, 0.05)
 
-[node name="Spawner" parent="." instance=ExtResource("23_h0quh")]
+[node name="Level 1" parent="." instance=ExtResource("3_tw8q8")]
+position = Vector2(-283.722, -153.519)
+scale = Vector2(0.3, 0.3)
 
 [node name="Player" parent="." instance=ExtResource("4_nb8ew")]
+scale = Vector2(1, 1)
 
-[node name="Level 1" parent="." instance=ExtResource("3_tw8q8")]
+[node name="Spawner" parent="." instance=ExtResource("23_h0quh")]
+scale = Vector2(1, 1)

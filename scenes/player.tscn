@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2ecsv71t7lvu" path="res://assets/attack_animation_no_lines_png.png" id="3_tontw"]
 [ext_resource type="Texture2D" uid="uid://cx8o784sg7408" path="res://assets/ile_animation_whale_png.png" id="4_b5f8a"]
 [ext_resource type="Texture2D" uid="uid://ds6nwr11a4yn4" path="res://assets/wALK_CYCLE_whale_png.png" id="5_4q3bx"]
-[ext_resource type="PackedScene" path="res://scenes/collision.tscn" id="23_ax58f"]
+[ext_resource type="PackedScene" uid="uid://c4tkwt2y3i4of" path="res://scenes/collision.tscn" id="23_ax58f"]
 [ext_resource type="Script" path="res://scripts/collision_with_mob.gd" id="25_5qf8h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u35mc"]
@@ -103,8 +103,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hkof"]
-size = Vector2(18109.9, 50.9623)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpm7o"]
+size = Vector2(280, 380)
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_4lh5p")
@@ -112,20 +112,20 @@ script = ExtResource("1_4lh5p")
 [node name="Whale" type="CharacterBody2D" parent="."]
 z_index = 1
 position = Vector2(-0.778343, 4.15061)
-scale = Vector2(0.05, -0.071)
+scale = Vector2(0.05, 0.05)
 script = ExtResource("2_uil6b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Whale"]
 rotation = 3.14159
 scale = Vector2(0.239905, -0.231121)
 sprite_frames = SubResource("SpriteFrames_iywin")
-animation = &"run"
+animation = &"attack"
 autoplay = "run"
 
 [node name="Collision" parent="Whale" instance=ExtResource("23_ax58f")]
 script = ExtResource("25_5qf8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Whale/Collision"]
-position = Vector2(16.1591, 8.96822)
-scale = Vector2(0.017967, -1.83798)
-shape = SubResource("RectangleShape2D_2hkof")
+position = Vector2(15.5669, 6.98783)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_bpm7o")
