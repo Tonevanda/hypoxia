@@ -4,11 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bhenoi4ci8ml2" path="res://scenes/player.tscn" id="4_nb8ew"]
 [ext_resource type="PackedScene" uid="uid://b3ck0ev6dki1r" path="res://scenes/level_1.tscn" id="5_lpg38"]
 [ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="6_4h6x1"]
-[ext_resource type="Texture2D" uid="uid://cb5chlqboixxe" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="22_dkbfi"]
 [ext_resource type="PackedScene" uid="uid://drtmflbbsaavt" path="res://scenes/spawner.tscn" id="23_h0quh"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rnywv"]
+load_path = "res://.godot/imported/world_tileset.png-69b6f3bb6f9e2e7040ba00c1da8dc33b.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1pw4"]
-texture = ExtResource("22_dkbfi")
+texture = SubResource("CompressedTexture2D_rnywv")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
