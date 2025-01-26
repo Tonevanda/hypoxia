@@ -17,6 +17,9 @@ func _process(delta: float) -> void:
 	if OXYGEN_LEVEL <= 0:
 		on_oxygen_depleted()
 
+func reset_oxigen():
+	OXYGEN_LEVEL = 100.0
+	
 func on_oxygen_depleted() -> void:
 	print("Oxygen depleted! Game over.")
 	
