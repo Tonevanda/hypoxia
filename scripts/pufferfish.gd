@@ -5,12 +5,10 @@ extends Node2D
 @onready var player = get_node("/root/Game/Player/Whale")
 @onready var animated_sprite = $AnimatedSprite2D
 var collidingEntities = []
-var SPEED = 10.0
+const SPEED = 10.0
 var animation_state = "walk"
 var attack_time = 0.0
 
-func _ready():
-	get_child(2).SPEED = 10.0
 
 func handleCollisions():
 	for entity in collidingEntities:

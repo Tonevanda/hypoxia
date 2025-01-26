@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 const SPEED = 6000.0
-var prev_direction = 1
 var collidingEntities = []
 var animation_state = "run"
 var attack_time = 0.0  # Timer for attack animation duration
@@ -54,11 +53,6 @@ func _start_attack() -> void:
 	attack_time = 0.0  # Reset the attack timer
 	animated_sprite.play("attack")
 	var projectile = projectile_scene.instantiate()
-	projectile.position = position
-	if animated_sprite.flip_h:	
-		projectile.set_direction(1)
-	else:
-		projectile.set_direction(-1)
 	projectile.name = "Projectile" + str(projectileId)
 	get_parent().add_child(projectile)
 	projectileId += 1

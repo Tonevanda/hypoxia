@@ -1,12 +1,8 @@
 extends Node2D
 
 var collidingEntities = []
-var direction = 1
 @export var SPEED = 100.0
 
-
-func set_direction(casterDirection: int) -> void:
-	direction = casterDirection
 
 func handleCollisions():
 	collidingEntities = []
@@ -15,6 +11,5 @@ func handleCollisions():
 func _process(delta: float) -> void:
 	if !collidingEntities.is_empty():
 		handleCollisions()
-	else:
-		position.x += direction * SPEED * delta
+
 	

@@ -1,24 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7fbinf6fsay2"]
+[gd_scene load_steps=7 format=3 uid="uid://c7fbinf6fsay2"]
 
-[ext_resource type="Script" path="res://scripts/straight.gd" id="1_fdsm4"]
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_fdsm4"]
 [ext_resource type="PackedScene" uid="uid://c4tkwt2y3i4of" path="res://scenes/collision.tscn" id="2_ptbc7"]
 [ext_resource type="Texture2D" uid="uid://b36haqdj02oep" path="res://assets/projectile.png" id="2_tajvm"]
+[ext_resource type="PackedScene" uid="uid://bbd4n4x858r2p" path="res://scenes/straight_from_player.tscn" id="4_sq7u5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8rp2"]
-size = Vector2(116, 119)
+size = Vector2(42.4878, 52.7811)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfbwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tajvm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Projectile" type="Node2D"]
 scale = Vector2(0.0941447, 0.113677)
 script = ExtResource("1_fdsm4")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.128488, 0.106374)
-texture = ExtResource("2_tajvm")
 
 [node name="Collision" parent="." instance=ExtResource("2_ptbc7")]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
-position = Vector2(0, -0.5)
+position = Vector2(2.53247e-06, 0)
 shape = SubResource("RectangleShape2D_i8rp2")
+
+[node name="StraightFromPlayer" parent="." instance=ExtResource("4_sq7u5")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.11552, 0.105967)
+sprite_frames = SubResource("SpriteFrames_kfbwr")
