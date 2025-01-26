@@ -13,7 +13,6 @@ func _ready() -> void:
 
 func spawn_pufferfish() -> void:
 	var pufferfish = pufferfish_scene.instantiate()
-	pufferfish.rotation = PI
 	pufferfish.position = Vector2(randi_range(-100, 100), randi_range(-100, 100))
 	pufferfish.name = "Pufferfish" + str(id)
 	get_parent().add_child(pufferfish)

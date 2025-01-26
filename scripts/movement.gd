@@ -12,9 +12,9 @@ var projectileId = 1
 
 func _flipH() -> void:
 	var h_direction := Input.get_axis("ui_left", "ui_right")
-	if h_direction < 0:
+	if h_direction > 0:
 		animated_sprite.flip_h = false
-	elif h_direction > 0:
+	elif h_direction < 0:
 		animated_sprite.flip_h = true
 
 func _update_velocity() -> void:

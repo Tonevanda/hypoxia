@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://c2qbnu56uephs"]
+[gd_scene load_steps=8 format=4 uid="uid://c2qbnu56uephs"]
 
 [ext_resource type="Script" path="res://scripts/gameLogic.gd" id="1_3bf4u"]
 [ext_resource type="PackedScene" uid="uid://bwh5rk36estp0" path="res://scenes/player.tscn" id="4_nb8ew"]
+[ext_resource type="PackedScene" uid="uid://b3ck0ev6dki1r" path="res://scenes/level_1.tscn" id="5_lpg38"]
 [ext_resource type="Texture2D" uid="uid://cb5chlqboixxe" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="22_dkbfi"]
 [ext_resource type="PackedScene" uid="uid://drtmflbbsaavt" path="res://scenes/spawner.tscn" id="23_h0quh"]
 
@@ -140,7 +141,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_f1pw4")
 
 [node name="Game" type="Node2D"]
-scale = Vector2(118.2, -148.412)
+scale = Vector2(118, 118)
 script = ExtResource("1_3bf4u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -155,4 +156,10 @@ tile_set = SubResource("TileSet_ex1tj")
 [node name="Spawner" parent="." instance=ExtResource("23_h0quh")]
 scale = Vector2(0.658592, 0.0235463)
 
+[node name="Level 1" parent="." instance=ExtResource("5_lpg38")]
+position = Vector2(-250.059, -143.102)
+scale = Vector2(0.254763, 0.254763)
+
 [node name="Player" parent="." instance=ExtResource("4_nb8ew")]
+position = Vector2(-1.65519e-05, 0)
+scale = Vector2(1, 1)
