@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm351vg6e0qkk"]
+[gd_scene load_steps=5 format=3 uid="uid://dm351vg6e0qkk"]
 
 [ext_resource type="Texture2D" uid="uid://cjyph6hw3ql0e" path="res://assets/bubble.png" id="1_he2qt"]
+[ext_resource type="Script" path="res://scenes/bubble.gd" id="1_rmeby"]
 [ext_resource type="PackedScene" uid="uid://c4tkwt2y3i4of" path="res://scenes/collision.tscn" id="2_j2irm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gnvvx"]
@@ -10,6 +11,7 @@ radius = 0.518024
 position = Vector2(8, 2)
 rotation = 3.14159
 scale = Vector2(-10.6042, -5.29098)
+script = ExtResource("1_rmeby")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.188604, 0.378002)
