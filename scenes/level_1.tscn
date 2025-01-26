@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3ck0ev6dki1r"]
+[gd_scene load_steps=3 format=3 uid="uid://b3ck0ev6dki1r"]
 
 [ext_resource type="Texture2D" uid="uid://llma1t5xt7ry" path="res://assets/Level 1.png" id="1_l55it"]
+[ext_resource type="AudioStream" uid="uid://bgk8a1xxlagi4" path="res://audio/Quero Ser um Ecrã (mp3cut.net).mp3" id="2_x2jii"]
 
 [node name="Level 1" type="Node2D"]
 
@@ -8,3 +9,8 @@
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_l55it")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_x2jii")
+autoplay = true
+parameters/looping = true
