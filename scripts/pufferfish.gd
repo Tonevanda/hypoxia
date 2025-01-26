@@ -5,9 +5,12 @@ extends Node2D
 @onready var player = get_node("/root/Game/Player/Whale")
 @onready var animated_sprite = $AnimatedSprite2D
 var collidingEntities = []
-const SPEED = 10.0
+var SPEED = 10.0
 var animation_state = "walk"
 var attack_time = 0.0
+
+func _ready():
+	get_child(2).SPEED = 10.0
 
 func handleCollisions():
 	for entity in collidingEntities:
@@ -18,10 +21,7 @@ func handleCollisions():
 				get_parent().generateEndRoom()
 			queue_free()
 
-func move(delta: float):
-	if animation_state != "attack":
-		position.x = move_toward(position.x, player.position.x, SPEED*delta)
-		position.y = move_toward(position.y, player.position.y, SPEED*delta)
+
 
 func animate(delta: float):
 	animated_sprite.play(animation_state)
@@ -34,5 +34,4 @@ func animate(delta: float):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	handleCollisions()
-	move(delta)
 	animate(delta)
