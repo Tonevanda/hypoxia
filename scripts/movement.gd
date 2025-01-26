@@ -34,13 +34,13 @@ func _animate(delta: float):
 	var h_direction := Input.get_axis("ui_left", "ui_right")
 	var v_direction := Input.get_axis("ui_up", "ui_down")
 	if animation_state == "hurt":
-		animation_state = "none"
+		animation_state = "idle"
 	elif animation_state == "attack":
 		attack_time += delta
 		# Retard hard-coded value, I'm a Godot noob whatever
 		if attack_time >= 0.65:
 			# Attack animation is finished, reset
-			animation_state = "none"
+			animation_state = "idle"
 	elif h_direction == 0 and v_direction == 0:
 		animation_state = "idle"
 	else:
@@ -79,4 +79,3 @@ func _physics_process(delta: float) -> void:
 	_animate(delta)
 	move_and_slide()
 	clearVelocity()
-	collidingEntities = []

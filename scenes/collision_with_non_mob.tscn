@@ -1,9 +1,26 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvgsptgg612im"]
 
-[ext_resource type="Script" path="res://scripts/collision_with_non_mob.gd" id="1_xq8l6"]
+[sub_resource type="GDScript" id="GDScript_u2k54"]
+script/source = "extends Area2D
+
+
+
+
+func _on_area_entered(area: Area2D) -> void:
+	var area_parent = area.get_parent()
+	area_parent.collidingEntities.append(get_parent())
+
+
+func _on_area_exited(area: Area2D) -> void:
+	var area_parent = area.get_parent()
+	for entity in area_parent.collidingEntities:
+		if entity.name == get_parent().name:
+			area_parent.collidingEntities.remove(entity)
+			break
+"
 
 [node name="Area2D" type="Area2D"]
-script = ExtResource("1_xq8l6")
+script = SubResource("GDScript_u2k54")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

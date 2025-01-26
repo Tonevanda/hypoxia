@@ -8,6 +8,7 @@ const SPEED = 10.0
 
 func handleCollisions(delta: float):
 	for entity in collidingEntities:
+		print(entity.name)
 		if entity.name.begins_with("Projectile"):
 			get_parent().num_enemies -= 1
 			if get_parent().num_enemies == 0:
@@ -21,4 +22,3 @@ func _process(delta: float) -> void:
 	else:
 		position.x = move_toward(position.x, player.position.x, SPEED*delta)
 		position.y = move_toward(position.y, player.position.y, SPEED*delta)
-	collidingEntities = []
