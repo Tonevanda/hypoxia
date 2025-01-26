@@ -3,10 +3,12 @@ extends Node2D
 var collidingEntities = []
 
 
+
 func handleCollisions():
 	for entity in collidingEntities:
 		if entity.name == "Whale":
 			entity.get_parent().reset_oxigen()
+			entity.get_parent().get_parent().generateNewLevel()
 			queue_free()
 
 
