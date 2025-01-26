@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvvtnviufr6up"]
+
+[ext_resource type="Texture2D" uid="uid://ce7g32wb80qgd" path="res://assets/Artboard 9.png" id="1_td2iq"]
+
+[node name="Level 2" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_right = 1916.0
+offset_bottom = 1080.0
+texture = ExtResource("1_td2iq")
