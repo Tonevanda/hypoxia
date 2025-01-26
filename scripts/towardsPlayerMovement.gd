@@ -10,6 +10,9 @@ func handleCollisions(delta: float):
 	print(collidingEntities)
 	for entity in collidingEntities:
 		if entity.name.begins_with("Projectile"):
+			get_parent().num_enemies -= 1
+			if get_parent().num_enemies == 0:
+				get_parent().generateEndRoom()
 			queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

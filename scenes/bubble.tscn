@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm351vg6e0qkk"]
+
+[ext_resource type="Texture2D" uid="uid://64aajxrx8omj" path="res://assets/main-menu.png" id="1_8s3qq"]
+[ext_resource type="PackedScene" uid="uid://bvgsptgg612im" path="res://scenes/collision_with_non_mob.tscn" id="2_j2irm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4213o"]
+size = Vector2(58, 56)
+
+[node name="Bubble" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0309111, 0.0523241)
+texture = ExtResource("1_8s3qq")
+
+[node name="Area2D" parent="." instance=ExtResource("2_j2irm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4213o")

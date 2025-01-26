@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var pufferfish_scene = preload("res://scenes/pufferfish.tscn")
+@onready var bubble_scene = preload("res://scenes/bubble.tscn")
 var id = 1
 var difficulty = 0
 var difficulties = [1]
@@ -20,6 +21,7 @@ func spawn_pufferfish() -> void:
 	
 	
 func spawn_mobs():
+	var enemy_count = 0
 	while difficulty > 0:
 		var index = randi_range(0, 0)
 		
@@ -27,7 +29,15 @@ func spawn_mobs():
 		var mob_name = mobs[index]
 		if mob_name == "Pufferfish":
 			spawn_pufferfish()
+		enemy_count += 1
+	get_parent().num_enemies = enemy_count
 
+func spawnBubble():
+	var bubble = bubble_scene.instantiate()
+	bubble.position = Vector2(0, 0)
+	bubble.name = "Bubble" + str(id)
+	get_parent().add_child(bubble)
+	id += 1
 
 func _on_timer_timeout() -> void:
 	spawn_mobs()
