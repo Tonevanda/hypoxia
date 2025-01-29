@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwv0map1vy3tx"]
+
+[ext_resource type="PackedScene" uid="uid://c4tkwt2y3i4of" path="res://scenes/collision.tscn" id="1_62qdn"]
+[ext_resource type="PackedScene" uid="uid://whnmv0lney2d" path="res://scenes/blue_lobster.tscn" id="2_m1mkk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lqbpw"]
+radius = 276.226
+
+[node name="Boss" type="Node2D"]
+
+[node name="Collision" parent="." instance=ExtResource("1_62qdn")]
+collision_layer = 16
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+position = Vector2(226, 63)
+shape = SubResource("CircleShape2D_lqbpw")
+
+[node name="Blue Lobster" parent="." instance=ExtResource("2_m1mkk")]
+position = Vector2(230, 71)

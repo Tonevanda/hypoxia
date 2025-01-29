@@ -3,10 +3,10 @@ extends CharacterBody2D
 const SPEED = 6000.0
 var collidingEntities = []
 var animation_state = "run"
-var animation_time = 0.0 
+var animation_time = 0.0
 var projectileId = 1
 const invincibility_duration = 2.0
-var invincibility_time = 0.0 
+var invincibility_time = 0.0
 var isInvincible = false
 
 @onready var animated_sprite = $AnimatedSprite2D
@@ -55,11 +55,12 @@ func _animate(delta: float):
 		invincibility_time += delta
 	if invincibility_time >= invincibility_duration:
 		invincibility_time = 0.0
+		print("not invincible")
 		isInvincible = false
 
 
 func _start_attack() -> void:
-	if animation_state == "attack":  # Prevent starting another attack if already attacking
+	if animation_state == "attack": # Prevent starting another attack if already attacking
 		return
 	animation_state = "attack"
 	animated_sprite.play("attack")
@@ -70,11 +71,18 @@ func _start_attack() -> void:
 	
 func handleCollisions(delta: float):
 	for entity in collidingEntities:
+		print(entity)
 		if entity.name.begins_with("Pufferfish"):
 			if !isInvincible:
 				animation_state = "hurt"
+				get_parent().HEALTH -= 1
 				isInvincible = true
 			entity.animation_state = "attack"
+		elif entity.name.begins_with("Whale"):
+			if !isInvincible:
+				animation_state = "hurt"
+				get_parent().HEALTH -= 2
+				isInvincible = true
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("attack"):

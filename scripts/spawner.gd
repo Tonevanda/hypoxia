@@ -3,6 +3,7 @@ extends Node2D
 @onready var pufferfish_scene = preload("res://scenes/pufferfish.tscn")
 @onready var jellyfish_scene = preload("res://scenes/jellyfish.tscn")
 @onready var bubble_scene = preload("res://scenes/bubble.tscn")
+@onready var boss_scene = preload("res://scenes/boss.tscn")
 @onready var game = get_parent()
 var id = 1
 var difficulty = 0
@@ -44,13 +45,27 @@ func spawn_mobs():
 		enemy_count += 1
 	get_parent().num_enemies = enemy_count
 
-func spawnBubble():
+func spawnEndBubble():
 	var bubble = bubble_scene.instantiate()
-	bubble.position = Vector2(0, 0)
+	bubble.position = Vector2(0,0)
+	bubble.name = "EndBubble" + str(id)
+	bubble.rotation = PI
+	get_parent().add_child(bubble)
+	id += 1
+	
+func spawnBubble(position):
+	var bubble = bubble_scene.instantiate()
+	bubble.position = position
 	bubble.name = "Bubble" + str(id)
 	bubble.rotation = PI
 	get_parent().add_child(bubble)
 	id += 1
-
+func spawn_boss():
+	var boss = boss_scene.instantiate()
+	boss.position = position
+	boss.name = "Boss"
+	boss.rotation = PI
+	get_parent().add_child(boss)
+	
 func _on_timer_timeout() -> void:
 	spawn_mobs()

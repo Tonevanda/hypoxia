@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://506q8rxksxo8"]
+[gd_scene load_steps=6 format=3 uid="uid://bh5oqecimv2hl"]
 
 [ext_resource type="Texture2D" uid="uid://du7ag5iudrbgg" path="res://assets/O2_meter_png.png" id="1_8dqlk"]
+[ext_resource type="Texture2D" uid="uid://baru78382cumg" path="res://assets/healthbar_no_skull_png.png" id="2_itygi"]
+[ext_resource type="Texture2D" uid="uid://dka0wd0vgly3b" path="res://assets/healthbar_skull_png.png" id="3_3s2po"]
+[ext_resource type="Texture2D" uid="uid://do8yxvnw4jlbp" path="res://assets/healthbar_content_v2_png.png" id="3_f41oj"]
+[ext_resource type="Script" path="res://scenes/texture_progress_bar.gd" id="4_y5437"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -11,6 +15,21 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, -1)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_8dqlk")
 hframes = 5
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -284.0
+offset_top = -102.0
+offset_right = 1366.0
+offset_bottom = 1548.0
+scale = Vector2(0.0470392, 0.0470392)
+max_value = 3.0
+value = 1.0
+texture_under = ExtResource("2_itygi")
+texture_over = ExtResource("3_3s2po")
+texture_progress = ExtResource("3_f41oj")
+script = ExtResource("4_y5437")

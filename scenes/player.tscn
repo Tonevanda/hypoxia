@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://bwh5rk36estp0"]
 
-[ext_resource type="Script" path="res://scripts/oxygentracker.gd" id="1_4lh5p"]
+[ext_resource type="Script" path="res://scripts/statsTracker.gd" id="1_4lh5p"]
 [ext_resource type="Script" path="res://scripts/movement.gd" id="2_uil6b"]
 [ext_resource type="Texture2D" uid="uid://2ecsv71t7lvu" path="res://assets/attack_animation_no_lines_png.png" id="3_tontw"]
 [ext_resource type="Texture2D" uid="uid://cx8o784sg7408" path="res://assets/ile_animation_whale_png.png" id="4_b5f8a"]
@@ -132,7 +132,7 @@ autoplay = "run"
 frame_progress = 0.700216
 
 [node name="Collision" parent="Whale" instance=ExtResource("23_ax58f")]
-collision_mask = 10
+collision_mask = 26
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Whale/Collision"]
 position = Vector2(4.51783, 6.98779)

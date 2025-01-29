@@ -3,6 +3,7 @@ extends Area2D
 
 func _on_area_entered(area: Area2D) -> void:
 	var area_parent = area.get_parent()
+	print(get_parent())
 	area_parent.collidingEntities.append(get_parent())
 
 
